@@ -1,7 +1,10 @@
 const express = require('express');
 require('dotenv').config();
+const login = require('./routes/login');
 
 const app = express();
+
+app.use('/login', login);
 
 app.get('/', (req, res) => {
     return res.json({ "message": "Hello World!" });
